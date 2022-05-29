@@ -20,11 +20,6 @@ public class MyThreadLocalTest {
 
     ThreadLocal<String> t = new ThreadLocal<>();
 
-    /**
-     * 变量
-     */
-    private String content;
-
     private String getContent() {
         return t.get();
     }
@@ -39,16 +34,12 @@ public class MyThreadLocalTest {
 
         for (int i = 0; i < 5; i++) {
 
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    myThreadLocalTest.setContent(Thread.currentThread().getName() + "的数据");
-                    System.out.println("---------------------------------------------");
-                    System.out.println(Thread.currentThread().getName() + "--->" + myThreadLocalTest.getContent());
-                }
+            Thread thread = new Thread(() -> {
+                myThreadLocalTest.setContent(Thread.currentThread().getName() + "的数据");
+                System.out.println(Thread.currentThread().getName() + "--->" + myThreadLocalTest.getContent());
             });
 
-            thread.setName("线程"+i);
+            thread.setName("线程" + i);
             thread.start();
 
         }

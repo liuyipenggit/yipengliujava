@@ -1,4 +1,4 @@
-package com.yipeng.liu.springwork.module;
+package com.yipeng.liu.springwork.circularDependency;
 
 /**
  * @author yipeng

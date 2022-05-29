@@ -3,11 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="a" class="com.yipeng.liu.springwork.module.A" scope="singleton">
+    <bean id="a" class="com.yipeng.liu.springwork.circularDependency.A" scope="singleton">
         <property name="b" ref="b"/>
     </bean>
 
-    <bean id="b" class="com.yipeng.liu.springwork.module.B" scope="singleton">
+    <bean id="b" class="com.yipeng.liu.springwork.circularDependency.B" scope="singleton">
         <property name="a" ref="a"/>
     </bean>
 

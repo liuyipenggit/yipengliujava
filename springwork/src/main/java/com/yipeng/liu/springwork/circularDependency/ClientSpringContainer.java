@@ -1,7 +1,5 @@
-package com.yipeng.liu.springwork;
+package com.yipeng.liu.springwork.circularDependency;
 
-import com.yipeng.liu.springwork.module.A;
-import com.yipeng.liu.springwork.module.B;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
